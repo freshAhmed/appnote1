@@ -14,7 +14,7 @@ db.on('error', () => {
 });
 
 const app = express();
-export const server=https.createServer(app);
+export const server=https.createServer(app,{});
 AppHandler(app,config)
 
 server.on('error',onError)
