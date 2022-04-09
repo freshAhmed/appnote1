@@ -2,7 +2,7 @@
 
 import express from 'express'
 import  config  from './config/config.mjs';
-import https from "https"
+import http from "http"
 import mongoose from './node_modules/mongoose/index.js';
 import  {AppHandler} from './config/express.mjs'
 import { onError,onListening } from './config/appsupport.mjs';
@@ -14,7 +14,7 @@ db.on('error', () => {
 });
 
 const app = express();
-export const server=https.createServer(app,{});
+export const server=http.createServer(app);
 AppHandler(app,config)
 
 server.on('error',onError)
